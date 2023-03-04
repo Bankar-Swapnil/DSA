@@ -44,6 +44,7 @@ int main(){
     // root1->right = new node(15);
     // root1->left->left = new node(5);
     // root1->left->right = new node(10);
+    
     node * root1 = new node(10);
     root1->left = new node(11);
     root1->right = new node(15);

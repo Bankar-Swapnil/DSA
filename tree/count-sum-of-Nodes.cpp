@@ -16,6 +16,7 @@ struct node{
 
 };
 
+//number of nodes present in tree
 int countNode(node * root){
     if(root==NULL){
         return 0;
@@ -23,6 +24,7 @@ int countNode(node * root){
     return countNode(root->left)+countNode(root->right)+1;
 }
 
+//sum of all values of node present in tree
 int sumNode(node * root){
     if(root==NULL){
         return 0;
