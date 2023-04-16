@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 int gcd(int a,int b){
@@ -16,7 +16,12 @@ int lcd(int a,int b){
 int main(){
 
     cout<<gcd(12,18)<<"\n";
-    cout<<lcd(12,18);
+    cout<<lcd(12,18)<<endl;
+
+    //inbuild gcd function
+
+    cout<< __gcd(12,18)<<endl;
+
     return 0;
 
 }
