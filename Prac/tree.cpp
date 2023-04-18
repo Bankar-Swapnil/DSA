@@ -307,6 +307,60 @@ void leftView(node * root){
     
 }
 
+
+node * lca(node* root ,int n1, int n2){
+    //lowest common ancestor
+
+    if(root == NULL){
+        return NULL;
+    }
+    if(root->data == n1 || root -> data == n2){
+        return root;
+    }
+
+    node * left = lca(root->left,n1,n2);
+    node * right = lca(root->right,n1,n2);
+
+    if( left != NULL && right != NULL){
+        return root;
+    }
+    if(left == NULL && right == NULL){
+        return NULL;
+    }
+    if(left != NULL){
+        return lca(root->left,n1,n2);
+    }
+    return lca(root->right,n1,n2);
+}
+
+int findDis(node * root ,int k,int dist){
+    if(root==NULL){
+        return -1;
+    }
+    if(root->data == k){
+        return dist;
+    }
+    int left = findDis(root->left,k,dist+1);
+
+    if(left != -1){
+        return left;
+    }
+
+    return findDis(root->right,k,dist+1);
+}
+
+
+int distBtwnNode(node * root,int n1,int n2){
+
+    node * LCA= lca(root,n1,n2);
+    int d1 = findDis(LCA,n1,0);
+    int d2 = findDis(LCA,n2,0);
+
+    return d1+d2;
+}
+
+
+
 int main(){
 
     node* root = new node(1);
@@ -361,6 +415,8 @@ int main(){
     reightView(root);
     cout<<endl;
     leftView(root);
+    cout<<endl;
+    cout<<distBtwnNode(root,18,2)<<endl;
 
     return 0;
 }
