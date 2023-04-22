@@ -73,46 +73,46 @@
 
 
 //dfs 
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
-const int N = 1e5+2;
-bool vis[N];
-vector<int> adj[N];
+// const int N = 1e5+2;
+// bool vis[N];
+// vector<int> adj[N];
 
-void dfa(int vertex){
+// void dfa(int vertex){
 
-    cout<<vertex<<endl;
+//     cout<<vertex<<endl;
 
-    vis[vertex]= true;
+//     vis[vertex]= true;
 
-    for(int child: adj[vertex]){
-        cout<<"par "<<vertex<<" child "<<child<<endl;
-        if(vis[child]) continue;
+//     for(int child: adj[vertex]){
+//         cout<<"par "<<vertex<<" child "<<child<<endl;
+//         if(vis[child]) continue;
 
-        dfa(child);
-    }
-}
+//         dfa(child);
+//     }
+// }
 
 
 
-int main(){
+// int main(){
 
-    int n,m;
+//     int n,m;
 
-    cin>>n>>m;
+//     cin>>n>>m;
 
-    for(int i=0;i<m;i++){
-        int x,y;
-        cin>>x>>y;
+//     for(int i=0;i<m;i++){
+//         int x,y;
+//         cin>>x>>y;
 
-        adj[x].push_back(y);
-        adj[y].push_back(x);
-    }
+//         adj[x].push_back(y);
+//         adj[y].push_back(x);
+//     }
 
-    dfa(1);
+//     dfa(1);
     
-}
+// }
 
 
 //dfs with connected component count with elements of connected component
@@ -193,6 +193,7 @@ bool dfs(int vertex,int par){
         if (vis[childs]) return true;
         isLoopExist |= dfs(childs,vertex);
     }
+    return isLoopExist;
 }
 
 
