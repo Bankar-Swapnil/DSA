@@ -83,6 +83,7 @@ void DeletInLinkList(node * &head,int key){
     if(head->data==key){
         cout<<"success"<<endl;
         deleteAtHead(temp);
+        return;
     }
     while (temp->next->data!=key)
     {
