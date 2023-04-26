@@ -97,90 +97,115 @@ using namespace std;
 
 
 
-int precs(char c){
+// int precs(char c){
 
-    if(c=='^'){
-        return 3;
-    }
-    if(c=='*'|| c=='/'){
-        return 2;
-    }
-    if(c=='+' || c=='-'){
-        return 1;
-    }
-    else{
-        return -1;
-    }
-}
+//     if(c=='^'){
+//         return 3;
+//     }
+//     if(c=='*'|| c=='/'){
+//         return 2;
+//     }
+//     if(c=='+' || c=='-'){
+//         return 1;
+//     }
+//     else{
+//         return -1;
+//     }
+// }
 
-string infixToPrefix(string s){
+// string infixToPrefix(string s){
 
-    reverse(s.begin(),s.end());
+//     reverse(s.begin(),s.end());
+//     stack<char>st;
+//     string res;
+
+//     for(int i=0;i<s.length();i++){
+
+//         if(s[i]>='a' && s[i]<='z' || s[i]>='A' && s[i]<='Z' ) {
+//             res+=s[i];
+
+//         }else if(s[i]==')'){
+//             st.push(s[i]);
+//         }
+//         else if(s[i]=='('){
+//             while (!st.empty() && st.top()!=')')
+//             {
+//                 res+=st.top();
+//                 st.pop();
+//             }
+//             if(!st.empty()){
+//                 st.pop();
+//             }
+            
+//         }else{
+//             while(!st.empty() && precs(s[i])<=precs(st.top())){
+//                 res+=st.top();
+//                 st.pop();
+
+//             }
+//             st.push(s[i]);
+//         }
+//     }
+
+//     while(!st.empty()){
+//         res+=st.top();
+//         st.pop();
+//     }
+
+//     reverse(res.begin(),res.end());
+
+
+//     return res;
+// }
+
+
+
+
+// int main(){
+
+//     cout<<infixToPrefix("(a-b/c)*(a/k-l)")<<endl;
+//     return 0;
+// }
+
+
+
+//balance paranthesis
+
+
+bool isValid(string s){
+
     stack<char>st;
-    string res;
-
-    // for(int i=0;i<s.length();i++){
-    //     if(s[i]=='('){
-    //         s[i]=')';
-    //     }
-    //     if(s[i]==')'){
-    //         s[i]=='(';
-    //     }
-    // }
 
     for(int i=0;i<s.length();i++){
-
-        if(s[i]>='a' && s[i]<='z' || s[i]>='A' && s[i]<='Z' ) {
-            res+=s[i];
-
-        }else if(s[i]==')'){
+        if(s[i]=='(' || s[i]=='{' || s[i]=='['){
             st.push(s[i]);
         }
-        else if(s[i]=='('){
-            while (!st.empty() && st.top()!=')')
-            {
-                res+=st.top();
-                st.pop();
-            }
-            if(!st.empty()){
-                st.pop();
-            }
-            
-        }else{
-            while(!st.empty() && precs(s[i])<=precs(st.top())){
-                res+=st.top();
-                st.pop();
-
-            }
-            st.push(s[i]);
+        else if(s[i]==')' && !st.empty() && st.top()=='('){
+            st.pop();
         }
+        else if(s[i]==']' && !st.empty() && st.top()=='['){
+            st.pop();
+        }
+        else if(s[i]=='}' && !st.empty() && st.top()=='{'){
+            st.pop();
+        }
+
     }
-
-    while(!st.empty()){
-        res+=st.top();
-        st.pop();
+    if(!st.empty()){
+        return false;
     }
-
-    // for(int i=0;i<s.length();i++){
-    //     if(s[i]=='('){
-    //         s[i]=')';
-    //     }
-    //     if(s[i]==')'){
-    //         s[i]=='(';
-    //     }
-    // }
-    
-    reverse(res.begin(),res.end());
-
-
-    return res;
+    return true;
 }
 
 
 
 
 int main(){
+    string s="{([])}";
 
-    cout<<infixToPrefix("(a-b/c)*(a/k-l)")<<endl;
-    return 0;
+    if(isValid(s)){
+        cout<<"string is valid"<<endl;
+    }else{
+        cout<<"string is not valid"<<endl;
+    }
 }
