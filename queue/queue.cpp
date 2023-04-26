@@ -160,55 +160,127 @@ using namespace std;
 // }
 
 
-class que{
+// class que{
 
     
 
-    stack<int>s1;
-    stack<int>s2;
+//     stack<int>s1;
+//     stack<int>s2;
+//     public:
+
+//     void push(int val){
+//         s1.push(val);
+//     }
+
+//     int pop(){
+
+//         if(s1.empty() && s2.empty()){
+//             cout<<"queue is empty";
+//             return -1;
+//         }
+//         if(s2.empty()){ 
+//             while(!s1.empty()){
+//                 s2.push(s1.top());
+//                 s1.pop();
+//             }
+//         }
+//         int ele = s2.top();
+//         s2.pop();
+//         return ele;
+//     }
+
+//     bool empty(){
+//         if(s1.empty() && s2.empty()){
+//             return true;
+//         }
+//         return false;
+//     }
+
+// };
+
+
+// int main(){
+
+//     que q;
+//     q.push(2);
+//     q.push(3);
+//     q.push(5);
+
+//     cout<<q.pop()<<endl;
+//     cout<<q.pop()<<endl;
+//     cout<<q.pop()<<endl;
+
+//     return 0;
+// }
+
+
+class stack1{
+
+    int a;
+    queue<int>q1;
+    queue<int>q2;
+
     public:
 
-    void push(int val){
-        s1.push(val);
+    stack1(){
+        a=0;
     }
 
-    int pop(){
+    void push(int val){
+        q2.push(val);
+        a++;
+        while(!q1.empty()){
+            q2.push(q1.front());
+            q1.pop();
+        }
 
-        if(s1.empty() && s2.empty()){
-            cout<<"queue is empty";
+        queue<int>temp=q1;
+        q1=q2;
+        q2=temp;
+    }
+
+    void pop(){
+        if(q1.empty() && q2.empty()){
+            cout<<"stack is empty"<<endl;
+            return;
+        }
+        q1.pop();
+        a--;
+    }
+
+    int top(){
+        if(q1.empty() && q2.empty()){  
             return -1;
         }
-        if(s2.empty()){ 
-            while(!s1.empty()){
-                s2.push(s1.top());
-                s1.pop();
-            }
-        }
-        int ele = s2.top();
-        s2.pop();
-        return ele;
+        return q1.front();
     }
 
-    bool empty(){
-        if(s1.empty() && s2.empty()){
-            return true;
-        }
-        return false;
+    int size(){
+        return a;
     }
 
 };
 
-
 int main(){
 
-    que q;
-    q.push(2);
-    q.push(3);
-    q.push(5);
+    stack1 s;
+    s.push(2);
+    s.push(3);
+    s.push(5);
+    s.push(6);
 
-    cout<<q.pop()<<endl;
-    cout<<q.pop()<<endl;
-    cout<<q.pop()<<endl;
+    cout<<s.top()<<endl;
+
+    s.pop();
+    cout<<s.top()<<endl;
+    s.pop();
+    cout<<s.top()<<endl;
+    s.pop();
+    cout<<s.top()<<endl;
+    s.pop();
+    cout<<s.top()<<endl;
+    cout<<s.size()<<endl;
+
 
     return 0;
 }
