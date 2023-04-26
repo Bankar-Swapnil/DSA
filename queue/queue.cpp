@@ -1,4 +1,5 @@
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 
@@ -74,86 +75,140 @@ using namespace std;
 
 
 
-struct node{
+// struct node{
+//     public:
+//     int data;
+//     node * next;
+
+//     node(int val){
+//         data = val;
+//         next =NULL;
+//     }
+
+// };
+
+// class queue{
+//     node * front;
+//     node * back;
+
+
+//     public:
+//     queue(){
+//         front=NULL;
+//         back=NULL;
+//     }
+
+//     void push(int val){
+//         node * a=new node(val);
+//         if(front==NULL){
+//             back=a;
+//             front=a;
+//             return;
+//         }
+//         back->next=a;
+//         back=a;
+//     }
+
+//     void pop(){
+
+//         if(front==NULL){
+//             cout<<"queue is empty";
+//             return;
+//         }
+//         node * toDelete=front;
+//         front=front->next;
+//         delete toDelete;
+
+//     }
+
+//     int peak(){
+
+//         if(front==NULL){
+//             return -1;
+//         }
+
+//         return front->data;
+//     }
+
+//     bool isEmpty(){
+
+//         if(front==NULL){
+//             return true;
+//         }
+//         return false;
+//     }
+// };
+
+// int main(){
+
+//     queue q;
+
+//     q.push(1);
+//     q.push(3);
+//     q.push(2);
+
+//     cout<<q.peak()<<endl;
+//     q.pop();
+//     cout<<q.peak()<<endl;
+//     q.pop();
+//     cout<<q.peak()<<endl;q.pop();
+//     cout<<q.peak()<<endl;
+
+
+
+//     return 0;
+// }
+
+
+class que{
+
+    
+
+    stack<int>s1;
+    stack<int>s2;
     public:
-    int data;
-    node * next;
-
-    node(int val){
-        data = val;
-        next =NULL;
-    }
-
-};
-
-class queue{
-    node * front;
-    node * back;
-
-
-    public:
-    queue(){
-        front=NULL;
-        back=NULL;
-    }
 
     void push(int val){
-        node * a=new node(val);
-        if(front==NULL){
-            back=a;
-            front=a;
-            return;
-        }
-        back->next=a;
-        back=a;
+        s1.push(val);
     }
 
-    void pop(){
+    int pop(){
 
-        if(front==NULL){
+        if(s1.empty() && s2.empty()){
             cout<<"queue is empty";
-            return;
-        }
-        node * toDelete=front;
-        front=front->next;
-        delete toDelete;
-
-    }
-
-    int peak(){
-
-        if(front==NULL){
             return -1;
         }
-
-        return front->data;
+        if(s2.empty()){ 
+            while(!s1.empty()){
+                s2.push(s1.top());
+                s1.pop();
+            }
+        }
+        int ele = s2.top();
+        s2.pop();
+        return ele;
     }
 
-    bool isEmpty(){
-
-        if(front==NULL){
+    bool empty(){
+        if(s1.empty() && s2.empty()){
             return true;
         }
         return false;
     }
+
 };
+
 
 int main(){
 
-    queue q;
-
-    q.push(1);
-    q.push(3);
+    que q;
     q.push(2);
+    q.push(3);
+    q.push(5);
 
-    cout<<q.peak()<<endl;
-    q.pop();
-    cout<<q.peak()<<endl;
-    q.pop();
-    cout<<q.peak()<<endl;q.pop();
-    cout<<q.peak()<<endl;
-
-
+    cout<<q.pop()<<endl;
+    cout<<q.pop()<<endl;
+    cout<<q.pop()<<endl;
 
     return 0;
 }
