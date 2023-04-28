@@ -264,9 +264,9 @@ class stack1{
 int main(){
 
     stack1 s;
-    s.push(2);
-    s.push(3);
-    s.push(5);
+    // s.push(2);
+    // s.push(3);
+    // s.push(5);
     s.push(6);
 
     cout<<s.top()<<endl;
