@@ -5,6 +5,7 @@
         "iostream": "cpp",
         "xutility": "cpp",
         "xstring": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "random": "cpp"
     }
 }
