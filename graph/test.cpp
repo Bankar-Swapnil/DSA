@@ -8,17 +8,17 @@ vector<vector<int>>cc;
 vector<int>c_cc;
 
 
-// bool dfs(int vertex,int par){
+bool dfs(int vertex,int par){
 
-//     vis[vertex]=true;
-//     bool isLoopExist = false;
-//     for(int child:arr[vertex]){
-//         if(vis[child]&& child==par) continue;
-//         if(vis[child]) return true;
-//         isLoopExist |= dfs(child,vertex);
-//     }
-//     return isLoopExist;
-// }
+    vis[vertex]=true;
+    bool isLoopExist = false;
+    for(int child:arr[vertex]){
+        if(vis[child]&& child==par) continue;
+        if(vis[child]) return true;
+        isLoopExist |= dfs(child,vertex);
+    }
+    return isLoopExist;
+}
 
 int main(){
 
