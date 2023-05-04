@@ -138,13 +138,13 @@ public class linklist {
         ll.insertAtEnd(6);
         ll.insertAtEnd(7);
 
-        ll.display();
-        ll.removeHead();
-        ll.removeTail();
-        ll.display();
-        ll.removeHead();
-        ll.removeTail();
-        ll.display();
+        // ll.display();
+        // ll.removeHead();
+        // ll.removeTail();
+        // ll.display();
+        // ll.removeHead();
+        // ll.removeTail();
+        // ll.display();
         // System.out.println(ll.searchNode(5));
         // System.out.println(ll.searchNode(11));
         // System.out.println(size);
