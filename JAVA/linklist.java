@@ -145,9 +145,9 @@ public class linklist {
         // ll.removeHead();
         // ll.removeTail();
         ll.display();
-        System.out.println(ll.searchNode(5));
-        System.out.println(ll.searchNode(11));
-        System.out.println(size);
+        // System.out.println(ll.searchNode(5));
+        // System.out.println(ll.searchNode(11));
+        // System.out.println(size);
 
         // ll.removeNthNode(2);
         ll.reversLinklist();
