@@ -88,9 +88,9 @@ public class Sorting {
     public static void main(String args[]){
 
         int arr[]={10,3,7,4,9,1};
-        // selectionSort(arr);
-        // bubbleSort(arr);
-        // bubbleSort(arr);
+        selectionSort(arr);
+        bubbleSort(arr);
+        bubbleSort(arr);
 
         quickSort(arr,0,arr.length-1);
         for(int a:arr){
