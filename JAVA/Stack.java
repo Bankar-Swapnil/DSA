@@ -19,18 +19,18 @@ public class Stack {
             return head==null;
         }
 
-        public static void push(int data){
+        // public static void push(int data){
 
-            node newNode = new node(data);
+        //     node newNode = new node(data);
 
-            if(head==null){
-                head=newNode;
-                return;
-            }
+        //     if(head==null){
+        //         head=newNode;
+        //         return;
+        //     }
 
-            newNode.next = head;
-            head=newNode;
-        }
+        //     newNode.next = head;
+        //     head=newNode;
+        // }
 
         public static int pop(){
             if(head==null){
