@@ -85,6 +85,66 @@ public class Sorting {
 	}
 
 
+
+
+
+
+    public static void merge(int arr[],int l,int mid,int r){
+
+        int n=mid-l+1;
+        int m = r-mid;
+
+        int a[] = new int[n];
+        int b[] = new int[m];
+
+        for(int i=0;i<n;i++){
+            a[i]=arr[l+i];
+        }
+        for(int i=0;i<m;i++){
+            b[i]=arr[mid+1+i];
+        }
+
+        int i=0;
+        int j=0;
+        int k=l;
+
+        while(i<n && j<m){
+            if(a[i]<b[j]){
+                arr[k]=a[i];
+                i++;
+                k++;
+            }else{
+                arr[k]=b[j];
+                j++;
+                k++;
+            }
+        }
+
+        while(i<n){
+                arr[k]=a[i];
+                i++;
+                k++;
+        }
+        while(j<m){
+                arr[k]=b[j];
+                j++;
+                k++;
+        }
+
+    }
+
+
+
+    public static  void mergeSort(int arr[],int l,int r){
+        if(l<r){
+            int mid = (l+r)/2;
+            mergeSort(arr, l, mid);
+            mergeSort(arr, mid+1, r);
+            merge(arr,l,mid,r);
+        }
+    }
+
+
     public static void main(String args[]){
 
         int arr[]={10,3,7,4,9,1};
@@ -92,7 +152,8 @@ public class Sorting {
         // bubbleSort(arr);
         // bubbleSort(arr);
 
-        quickSort(arr,0,arr.length-1);
+        // quickSort(arr,0,arr.length-1);
+        mergeSort(arr,0,5);
         for(int a:arr){
             System.out.print(a+" ");
         }
