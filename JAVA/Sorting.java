@@ -82,11 +82,8 @@ public class Sorting {
 			quickSort(arr, low, pi-1);
 			quickSort(arr, pi+1, high);
 		}
+        
 	}
-
-
-
-
 
 
     public static void merge(int arr[],int l,int mid,int r){
@@ -131,7 +128,7 @@ public class Sorting {
                 k++;
         }
 
-    }
+}
 
 
 
