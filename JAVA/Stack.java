@@ -1,5 +1,6 @@
 import java.util.*;
 public class Stack {
+    
     static class node{
         int data;
         node next;
