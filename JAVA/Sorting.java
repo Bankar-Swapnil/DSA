@@ -142,6 +142,107 @@ public class Sorting {
     }
 
 
+
+    public static void merge2(int arr[],int l ,int mid,int h){
+
+        int n =mid-l+1;
+        int m = h-mid;
+
+        int a[]= new int[n];
+        int b[]= new int[m];
+
+        for(int i=0;i<n;i++){
+            a[i]=arr[l+i];
+        }
+        for(int j=0;j<m;j++){
+            b[j]=arr[mid+1+j];
+        }
+
+        int i=0;
+        int j =0;
+        int k=l;
+
+        while(i<n && j<m){
+            if(a[i]<b[j]){
+                arr[k]=a[i];
+                i++;
+                k++;
+            }else{
+                arr[k]=b[j];
+                j++;
+                k++;
+            }
+        }
+
+        while(i<n){
+            arr[k]=a[i];
+            i++;
+            k++;
+        }
+
+        while(j<m){
+            arr[k]=b[j];
+            j++;
+            k++;
+        }
+
+
+        
+
+    }
+
+    public static void  mergeSort2(int arr[],int l,int h){
+        if(l<h){
+            int mid = (l+h)/2;
+            mergeSort2(arr, l, mid);
+            mergeSort2(arr, mid+1,h);
+
+            merge2(arr,l,mid,h);
+
+        }
+    }
+
+
+
+    public static int partition2(int arr[],int l,int h){
+
+        int pivot =arr[h];
+        int i=l-1;
+
+        for(int j=l;j<h;j++){
+            if(arr[j]<=pivot){
+                i++;
+                int temp = arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+
+        int temp = arr[i+1];
+        arr[i+1]=arr[h];
+        arr[h]=temp;
+
+        return i+1;
+
+    }
+
+
+    public static void quickSort2(int arr[],int l,int h){
+        if(l<h){
+            int partitionIndex=partition2(arr, l, h);
+            quickSort2(arr, l, partitionIndex-1);
+            quickSort2(arr,partitionIndex+1,h);
+
+        }
+    }
+
+
+
+
+
+
+
+
     public static void main(String args[]){
 
         int arr[]={10,3,7,4,9,1};
