@@ -236,22 +236,48 @@ public class Sorting {
         }
     }
 
+    
+    
 
+    public static void selectionSort2(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    int temp =arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+    }
 
+public static void bubbleSort2(int arr[]){
+    for(int i=0;i<arr.length-1;i++){
+        for(int j=0;j<arr.length-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                int temp =arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+}
 
-
-
+    public static void insertationSort2(int arr[]){
+        
+    }
 
 
     public static void main(String args[]){
 
         int arr[]={10,3,7,4,9,1};
         // selectionSort(arr);
+        // selectionSort2(arr);
         // bubbleSort(arr);
         // bubbleSort(arr);
-
+        // bubbleSort2(arr);
         // quickSort(arr,0,arr.length-1);
-        mergeSort(arr,0,5);
+        // mergeSort(arr,0,5);
         for(int a:arr){
             System.out.print(a+" ");
         }
