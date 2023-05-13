@@ -14,11 +14,10 @@ public class graph {
         }
     }
 
-    public static void main(String[] args){
 
-        int v=5;
-        ArrayList<edge>[]graph= new ArrayList[v];
-        for(int i=0;i<v;i++){
+    static void creatGraph(ArrayList<edge>[]graph){
+
+        for(int i=0;i<graph.length;i++){
             graph[i]=new ArrayList<>();
         }
 
@@ -36,13 +35,34 @@ public class graph {
         graph[3].add(new edge(3, 2, 1));
 
         graph[4].add(new edge(4, 2, 2));
+    }
 
-        //2s neighbors
+    static void bfs(ArrayList<edge>[]graph){
+        Queue<Integer>q=new LinkedList<>();
+        boolean vis[] = new boolean[graph.length];
+        q.add(0);
+        while(!q.isEmpty()){
+            int curr = q.remove();
 
-        for(int i=0;i<graph[2].size();i++){
-            edge e = graph[2].get(i);
-            System.out.print(e.dest+" ");
+            if(!vis[curr]){
+                System.out.print(curr+" ");
+                vis[curr]=true;
+                for(int i=0;i<graph[curr].size();i++){
+                    edge e = graph[curr].get(i);
+                    q.add(e.dest);
+                }
+            }
         }
     }
-    
+
+    public static void main(String[] args){
+
+        int v=5;
+        ArrayList<edge>[]graph= new ArrayList[v];
+        creatGraph(graph);
+        bfs(graph);
+    }
+
+
+
 }
