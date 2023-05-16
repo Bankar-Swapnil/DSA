@@ -38,23 +38,23 @@ public class graph {
         graph[4].add(new edge(4, 2, 2));
     }
 
-    // static void bfs(ArrayList<edge>[]graph){
-    //     Queue<Integer>q=new LinkedList<>();
-    //     boolean vis[] = new boolean[graph.length];
-    //     q.add(0);
-    //     while(!q.isEmpty()){
-    //         int curr = q.remove();
+    static void bfs(ArrayList<edge>[]graph){
+        Queue<Integer>q=new LinkedList<>();
+        boolean vis[] = new boolean[graph.length];
+        q.add(0);
+        while(!q.isEmpty()){
+            int curr = q.remove();
 
-    //         if(!vis[curr]){
-    //             System.out.print(curr+" ");
-    //             vis[curr]=true;
-    //             for(int i=0;i<graph[curr].size();i++){
-    //                 edge e = graph[curr].get(i);
-    //                 q.add(e.dest);
-    //             }
-    //         }
-    //     }
-    // }
+            if(!vis[curr]){
+                System.out.print(curr+" ");
+                vis[curr]=true;
+                for(int i=0;i<graph[curr].size();i++){
+                    edge e = graph[curr].get(i);
+                    q.add(e.dest);
+                }
+            }
+        }
+    }
 
 
     public static void dfs(ArrayList<edge>[]graph,int curr,boolean vis[]){
