@@ -263,9 +263,6 @@ public class Sorting {
         }
     }
 
-    // public static void insertationSort2(int arr[]){
-        
-    // }
 
 
     public static void main(String args[]){
