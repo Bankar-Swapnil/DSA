@@ -61,13 +61,13 @@ public class sort {
 		return i+1;
     }
 
-    // public static void quickSort(int arr[],int l,int h) {
-    //     if(l<h){
-    //         int pi = partition(arr,l,h);
-    //         quickSort(arr, l, pi-1);
-    //         quickSort(arr, pi+1, h);
-    //     }
-    // }
+    public static void quickSort(int arr[],int l,int h) {
+        if(l<h){
+            int pi = partition(arr,l,h);
+            quickSort(arr, l, pi-1);
+            quickSort(arr, pi+1, h);
+        }
+    }
 
     public static void main(String args[]) {
         int arr[]={10,3,7,4,9,1};
