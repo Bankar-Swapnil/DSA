@@ -185,10 +185,6 @@ public class Sorting {
             j++;
             k++;
         }
-
-
-        
-
     }
 
     public static void  mergeSort2(int arr[],int l,int h){
