@@ -145,46 +145,46 @@ public class Sorting {
 
     public static void merge2(int arr[],int l ,int mid,int h){
 
-        // int n =mid-l+1;
-        // int m = h-mid;
+        int n =mid-l+1;
+        int m = h-mid;
 
-        // int a[]= new int[n];
-        // int b[]= new int[m];
+        int a[]= new int[n];
+        int b[]= new int[m];
 
-        // for(int i=0;i<n;i++){
-        //     a[i]=arr[l+i];
-        // }
-        // for(int j=0;j<m;j++){
-        //     b[j]=arr[mid+1+j];
-        // }
+        for(int i=0;i<n;i++){
+            a[i]=arr[l+i];
+        }
+        for(int j=0;j<m;j++){
+            b[j]=arr[mid+1+j];
+        }
 
-        // int i=0;
-        // int j =0;
-        // int k=l;
+        int i=0;
+        int j =0;
+        int k=l;
 
-        // while(i<n && j<m){
-        //     if(a[i]<b[j]){
-        //         arr[k]=a[i];
-        //         i++;
-        //         k++;
-        //     }else{
-        //         arr[k]=b[j];
-        //         j++;
-        //         k++;
-        //     }
-        // }
+        while(i<n && j<m){
+            if(a[i]<b[j]){
+                arr[k]=a[i];
+                i++;
+                k++;
+            }else{
+                arr[k]=b[j];
+                j++;
+                k++;
+            }
+        }
 
-        // while(i<n){
-        //     arr[k]=a[i];
-        //     i++;
-        //     k++;
-        // }
+        while(i<n){
+            arr[k]=a[i];
+            i++;
+            k++;
+        }
 
-        // while(j<m){
-        //     arr[k]=b[j];
-        //     j++;
-        //     k++;
-        // }
+        while(j<m){
+            arr[k]=b[j];
+            j++;
+            k++;
+        }
 
 
         
