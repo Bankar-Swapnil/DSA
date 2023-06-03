@@ -78,11 +78,9 @@ public class BST {
                 root.data=temp.data;
                 root.right=deleteInBST(root.right, temp.data);
             }
-            return root;
         }
+        return root;
     }
-
-
 
     public static void inorder(node root){
         if(root==null){
@@ -94,25 +92,55 @@ public class BST {
     }
 
 
+    public static boolean isBST(node root, node min, node max){
+        if(root == null){
+            return true;
+        }
+
+        if(min != null && root.data <= min.data ){
+            return false;
+        }
+        if(max != null && root.data>= max.data){
+            return false;
+        }
+
+        boolean leftValid = isBST(root.left, min, root);
+        boolean rightValid= isBST(root.right, root, max);
+        return leftValid & rightValid;
+    }
+
+
     public static void main(String args[]){
 
-        node root = null;
-        root = insertInBST(root, 5);
-        insertInBST(root, 1);
-        insertInBST(root, 3);
-        insertInBST(root, 4);
-        insertInBST(root, 2);
-        insertInBST(root, 7);
+        // node root = null;
+        // root = insertInBST(root, 5);
+        // insertInBST(root, 1);
+        // insertInBST(root, 3);
+        // insertInBST(root, 4);
+        // insertInBST(root, 2);
+        // insertInBST(root, 7);
 
-        inorder(root);
+        // inorder(root);
         // System.out.println();
         // if(searchInBST(root, 9)==true){
         //     System.out.println("key exist");
         // }else{
         //     System.out.println("key does not exist");
         // }
+        // System.out.println();
+        // root=deleteInBST(root, 3);
+        // inorder(root);
+
+        node root = new node(1);
+        root.left = new node(2);
+        root.right = new node(3);
+
+        if(isBST(root, null, null)){
+            System.out.println("valid bst");
+        }else{
+            System.out.println("not valid bst");
+        }
 
     }
-
 
 }
