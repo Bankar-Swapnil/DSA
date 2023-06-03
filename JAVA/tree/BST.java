@@ -105,12 +105,12 @@ public class BST {
         insertInBST(root, 7);
 
         inorder(root);
-        System.out.println();
-        if(searchInBST(root, 9)==true){
-            System.out.println("key exist");
-        }else{
-            System.out.println("key does not exist");
-        }
+        // System.out.println();
+        // if(searchInBST(root, 9)==true){
+        //     System.out.println("key exist");
+        // }else{
+        //     System.out.println("key does not exist");
+        // }
 
     }
 
