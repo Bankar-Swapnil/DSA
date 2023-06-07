@@ -92,22 +92,22 @@ public class BST {
     }
 
 
-    // public static boolean isBST(node root, node min, node max){
-    //     if(root == null){
-    //         return true;
-    //     }
+    public static boolean isBST(node root, node min, node max){
+        if(root == null){
+            return true;
+        }
 
-    //     if(min != null && root.data <= min.data ){
-    //         return false;
-    //     }
-    //     if(max != null && root.data>= max.data){
-    //         return false;
-    //     }
+        if(min != null && root.data <= min.data ){
+            return false;
+        }
+        if(max != null && root.data>= max.data){
+            return false;
+        }
 
-    //     boolean leftValid = isBST(root.left, min, root);
-    //     boolean rightValid= isBST(root.right, root, max);
-    //     return leftValid & rightValid;
-    // }
+        boolean leftValid = isBST(root.left, min, root);
+        boolean rightValid= isBST(root.right, root, max);
+        return leftValid & rightValid;
+    }
 
 
     public static void main(String args[]){
