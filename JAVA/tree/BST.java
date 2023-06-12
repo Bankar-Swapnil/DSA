@@ -12,21 +12,21 @@ public class BST {
         }
     }
 
-    // public static node insertInBST(node root,int val){
-    //     if(root == null){
+    public static node insertInBST(node root,int val){
+        if(root == null){
 
-    //         return new node(val);
+            return new node(val);
 
             
-    //     }
+        }
 
-    //     if(root.data>val){
-    //         root.left=insertInBST(root.left, val);
-    //     }else{
-    //         root.right=insertInBST(root.right,val);
-    //     }
-    //     return root;
-    // }
+        if(root.data>val){
+            root.left=insertInBST(root.left, val);
+        }else{
+            root.right=insertInBST(root.right,val);
+        }
+        return root;
+    }
 
 
 
