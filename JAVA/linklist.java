@@ -1,5 +1,7 @@
 import java.util.*;
 
+// import BST.node;
+
 public class linklist {
 
     public static class Node{
@@ -128,14 +130,81 @@ public class linklist {
         head =prev;
     }
 
+    // public Node reverseRecursive (Node head) {
+    //     if (head == null || head.next == null) {
+    //     return head;
+    //     }
+    //     Node newHead = reverseRecursive (head.next);
+    //     head.next.next = head;
+    //     head.next = null;
+    //     return newHead;
+    // }
+
+
+    public Node findMideNode(){
+        Node slow =head;
+        Node fast = head;
+        while(fast!=null && fast.next != null){
+            slow=slow.next;
+            fast = fast.next.next;
+        }
+        System.out.println(slow.data);
+        return slow;
+    }
+
+    public Node findMide(Node head){
+        Node slow =head;
+        Node fast = head;
+        while(fast!=null && fast.next != null){
+            slow=slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public boolean CheckPalindrom(){
+        if(head==null || head.next == null){
+            return true;
+        }
+        //step1 = find mid
+
+        Node midNode= findMide(head);
+
+
+        //step2 = reverse second half
+
+        Node prev =null;
+        Node curr=midNode;
+        Node next;
+        while(curr!=null){
+            next = curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        Node right = prev;
+        Node left = head;
+
+        //step3 = compair left and right half
+
+        while(right!=null){
+            if(left.data!=right.data){
+                return false;
+            }
+            left=left.next;
+            right=right.next;
+        }
+        return true;
+    }
+
     public static void  main(String args[]) {
         linklist ll = new linklist();
         
-        ll.insertAtHead(3);
-        ll.insertAtHead(2);
-        ll.insertAtHead(1);
-        ll.insertAtEnd(5);
-        ll.insertAtEnd(6);
+        ll.insertAtEnd(3);
+        ll.insertAtEnd(2);
+        ll.insertAtEnd(1);
+        ll.insertAtEnd(2);
+        ll.insertAtEnd(1);
         // ll.insertAtEnd(7);
 
         // ll.display();
@@ -150,8 +219,10 @@ public class linklist {
         // System.out.println(size);
 
         // ll.removeNthNode(2);
-        ll.reversLinklist();
-        ll.display();
+        // ll.reversLinklist();
+        // ll.findMideNode();
+        // ll.display();
+        System.out.println(ll.CheckPalindrom());
         
     }
     
