@@ -228,15 +228,15 @@ public class pract {
         // System.out.println();
         // levelOrder(head);
 
-        // System.out.println(sumOfNodes(head));
-        // System.out.println(totalNumberOfNodes(head));
-        // System.out.println(diameter(head));
-        // rightView1(head);
-        // leftView1(head);
-        // preorder(head);
-        // sumReplaced(head);
-        // System.out.println();
-        // preorder(head);
+        System.out.println(sumOfNodes(head));
+        System.out.println(totalNumberOfNodes(head));
+        System.out.println(diameter(head));
+        rightView1(head);
+        leftView1(head);
+        preorder(head);
+        sumReplaced(head);
+        System.out.println();
+        preorder(head);
         System.out.println(isBalanced(head));
 
     }
