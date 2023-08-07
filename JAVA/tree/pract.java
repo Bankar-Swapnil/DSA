@@ -219,14 +219,14 @@ public class pract {
         head.right.right = new node(1);
         head.left.left.left = new node(3);
 
-        preorder(head);
-        System.out.println();
-        postorder(head);
-        System.out.println();
-        inorder(head);
-        System.out.println();
-        System.out.println();
-        levelOrder(head);
+        // preorder(head);
+        // System.out.println();
+        // postorder(head);
+        // System.out.println();
+        // inorder(head);
+        // System.out.println();
+        // System.out.println();
+        // levelOrder(head);
 
         // System.out.println(sumOfNodes(head));
         // System.out.println(totalNumberOfNodes(head));
@@ -237,7 +237,7 @@ public class pract {
         // sumReplaced(head);
         // System.out.println();
         // preorder(head);
-        // System.out.println(isBalanced(head));
+        System.out.println(isBalanced(head));
 
     }
 }
