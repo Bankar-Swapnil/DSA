@@ -30,10 +30,11 @@ public class GCD {
 
     // Function to calculate the GCD of two numbers using Euclidean algorithm
     public static int calculateGCD(int a, int b) {
-        if (b == 0) {
-            return a;
-        } else {
-            return calculateGCD(b, a % b);
-        }
-    }    
+        // if (b == 0) {
+        //     return a;
+        // } else {
+        //     return calculateGCD(b, a % b);
+        // }
+    }   
+     
 }
