@@ -206,13 +206,13 @@ public class cycleLink{
     }
 
         public static void  main(String args[]) {
-        // cycleLink ll = new cycleLink();
+        cycleLink ll = new cycleLink();
         
-        // ll.insertAtEnd(3);
-        // ll.insertAtEnd(2);
-        // ll.insertAtEnd(1);
-        // ll.insertAtEnd(4);
-        // ll.insertAtEnd(5);
+        ll.insertAtEnd(3);
+        ll.insertAtEnd(2);
+        ll.insertAtEnd(1);
+        ll.insertAtEnd(4);
+        ll.insertAtEnd(5);
 
         // ll.makeCycle(3);
         // System.out.println(ll.checkCycle());
