@@ -1,8 +1,7 @@
 public class Sorting {
 
-
+    
     public  static void selectionSort(int arr[]){
-
         for(int i=0;i<arr.length;i++){
             for(int j=i+1;j<arr.length;j++){
                 if(arr[i]>arr[j]){
@@ -13,9 +12,7 @@ public class Sorting {
             }
         }
     }
-
     public static void bubbleSort(int arr[]){
-
         for(int i=0;i<arr.length-1;i++){
             for(int j=0;j<arr.length-i-1;j++){
                 if(arr[j]>arr[j+1]){
@@ -26,21 +23,16 @@ public class Sorting {
             }
         }
     }
-
-
     public static void insertationSort(int arr[]){
 
         for(int i=1;i<arr.length;i++){
             int key=arr[i];
             int j=i-1;
-
             while(j>=0 && arr[j]>key){
                 arr[j]=arr[j+1];
                 j--;
             }
-
             arr[j+1]=key;
-
         }
     }
 
@@ -87,45 +79,35 @@ public class Sorting {
 
 
     public static void merge(int arr[],int l,int mid,int r){
-
         int n=mid-l+1;
         int m = r-mid;
-
         int a[] = new int[n];
         int b[] = new int[m];
-
         for(int i=0;i<n;i++){
             a[i]=arr[l+i];
         }
         for(int i=0;i<m;i++){
             b[i]=arr[mid+1+i];
         }
-
         int i=0;
         int j=0;
         int k=l;
-
         while(i<n && j<m){
             if(a[i]<b[j]){
                 arr[k]=a[i];
-                i++;
-                k++;
+                i++;k++;
             }else{
                 arr[k]=b[j];
-                j++;
-                k++;
+                j++;k++;
             }
         }
-
         while(i<n){
                 arr[k]=a[i];
-                i++;
-                k++;
+                i++;k++;
         }
         while(j<m){
                 arr[k]=b[j];
-                j++;
-                k++;
+                j++;k++;
         }
 
     }
