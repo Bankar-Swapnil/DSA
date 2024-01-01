@@ -18,7 +18,7 @@ public class mergeSortedLinklist {
         System.out.println();
     }
 
-
+                                        
     public node mergeTwoLists(node list1, node list2) {
 
         if(list1!=null && list2!=null){
@@ -39,14 +39,23 @@ public class mergeSortedLinklist {
     public static void  main(String args[]) {
         mergeSortedLinklist ll = new mergeSortedLinklist();
 
-        node head = new node(1);
-        head.next = new node(2);
-        head.next.next = new node(4);
+        // node head = new node(1);
+        // head.next = new node(2);
+        // head.next.next = new node(4);
         
 
-        node head2 = new node(3);
-        head2.next = new node(5);
-        head2.next.next = new node(6);
+        // node head2 = new node(3);
+        // head2.next = new node(5);
+        // head2.next.next = new node(6);
+        node head = new node(3);
+        head.next = new node(4);
+        head.next.next =new node(5);
+        head.next.next.next = new node(8);
+        head.next.next.next.next = new node(7);
+
+        node head2 = new node(1);
+        head2.next = new node(2);
+        head2.next.next =new node(6);
 
         node head3 = ll.mergeTwoLists(head,head2);
 

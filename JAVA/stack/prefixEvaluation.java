@@ -95,10 +95,10 @@ public class prefixEvaluation {
 
         for(int i=0;i<s.length();i++){
             
-            if((s.charAt(i)>='a'&&s.charAt(i)<='z')||(s.charAt(i)>='A'&&s.charAt(i)<='Z')){
+            if((s.charAt(i)>='a'&& s.charAt(i)<='z')||(s.charAt(i)>='A'&&s.charAt(i)<='Z')){
                 ab.append(s.charAt(i));
             }
-            else if(s.charAt(i)=='('){
+            else if(s.charAt(i)=='('){ 
                 st.push(s.charAt(i));
             }
             else if(s.charAt(i)==')'){

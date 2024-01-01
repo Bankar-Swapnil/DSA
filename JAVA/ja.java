@@ -5,5 +5,6 @@ class ja{
         Scanner sc = new Scanner(System.in);
         a= sc.nextInt();
         System.out.println(a);
+  
     }
-}
+} 
