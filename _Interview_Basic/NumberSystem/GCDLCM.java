@@ -10,8 +10,6 @@ public class GCDLCM {
         return (a*b)/gcd(a,b);
     }
 
-    
-
     public static void main(String[] args) {
         
         System.out.println(gcd(12, 18));
