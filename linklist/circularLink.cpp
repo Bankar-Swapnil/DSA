@@ -63,8 +63,6 @@ void display(node * head){
     
 }
 
-
-
 int main(){
 
     node * head=NULL;
