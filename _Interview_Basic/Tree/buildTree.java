@@ -25,6 +25,35 @@ class buildTree{
 
             return newNode;
         }
+
+
+        public static void preOrder(node root){
+            if(root==null){
+                return;
+            }
+            System.out.print(root.data+" ");
+            preOrder(root.left);
+            preOrder(root.right);
+            
+        }
+
+        public static void postOrder(node root){
+            if(root==null){
+                return ;
+            }
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.data+" ");
+        }
+
+        public static void inOrder(node root){
+            if(root==null){
+                return;
+            }
+            inOrder(root.left);
+            System.out.print(root.data+" ");
+            inOrder(root.right);
+        }
     }
 
     public static void main(String[] args) {
@@ -33,5 +62,6 @@ class buildTree{
         node root = a.buildee( nodes);
         System.out.println(root.data);
         
+        a.preOrder(root);
     }
 }
