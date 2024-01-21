@@ -94,7 +94,44 @@ class buildTree{
 
             return Math.max(hightTree(root.left),hightTree(root.right))+1;
         }
+
+
+        public int sumCount(node root){
+            if(root==null){
+                return 0;
+            }
+
+            return sumCount(root.left)+sumCount(root.right)+root.data;
+        }
+
+
+        public static int numberOfNodes(node root){
+            if(root==null){
+                return 0;
+            }
+            return numberOfNodes(root.left)+numberOfNodes(root.right)+1;
+        }
+
+
+
+        public static int diameterOfTree(node root){
+            if(root==null){
+                return 0;
+            }
+            int leftd=diameterOfTree(root.left);
+            int lefth=hightTree(root.left);
+            int rightd=diameterOfTree(root.right);
+            int righth=hightTree(root.right);
+
+            int selfd=lefth+righth+1;
+
+            return Math.max(selfd,Math.max(leftd,rightd));
+
+        }
+
     }
+
+
 
     public static void main(String[] args) {
         tree a = new tree();
@@ -106,7 +143,10 @@ class buildTree{
 
         // a.levelOrder(root);
 
-        System.out.println(a.hightTree(root));
+        // System.out.println(a.hightTree(root));
+        // System.out.println(a.sumCount(root));
+        // System.out.println(a.numberOfNodes(root));
+        System.out.println(a.diameterOfTree(root));
 
     }
 }
