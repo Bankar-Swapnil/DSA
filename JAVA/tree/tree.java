@@ -13,6 +13,7 @@ public class tree {
             this.right = null;
         }
     }
+    
 
     public static void preorder(node head){
         if(head==null){

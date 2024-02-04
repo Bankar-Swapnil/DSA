@@ -340,23 +340,23 @@ public class linklist {
         // System.out.println(ll.midnode().data);
         // System.out.println(ll.CheckPalindrom());
 
-        // node head1 = new node(5);
-        // head1.next = new node (2);
-        // head1.next.next = new node(3);
-        // head1.next.next.next = new node(1);
-        // head1.next.next.next.next = new node(7);
-        // head1.next.next.next.next.next = new node(6);
-        // head1.next.next.next.next.next.next = new node(9);
+        node head1 = new node(5);
+        head1.next = new node (2);
+        head1.next.next = new node(3);
+        head1.next.next.next = new node(1);
+        head1.next.next.next.next = new node(7);
+        head1.next.next.next.next.next = new node(6);
+        head1.next.next.next.next.next.next = new node(9);
 
-        // node head2 = new node(4);
-        // head2.next = new node (3);
-        // head2.next.next = new node(7);
-        // head2.next.next.next = new node(6);
-        // head2.next.next.next.next = new node(9);
+        node head2 = new node(4);
+        head2.next = new node (3);
+        head2.next.next = new node(7);
+        head2.next.next.next = new node(6);
+        head2.next.next.next.next = new node(9);
 
-        // System.out.println(FindIntersection(head1,head2).data);
+        System.out.println(FindIntersection(head1,head2).data);
 
-        System.out.println(ll.thirdLargestElement().data);
+        // System.out.println(ll.thirdLargestElement().data);
 
         
 

@@ -32,6 +32,6 @@ public class sqr_without {
     }
 
     public static void main(String[] args) {
-        System.out.println(mySqrt(121));
+        System.out.println(mySqrt(1896));
     }
 }

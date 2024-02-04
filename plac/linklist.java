@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 public class linklist {
     
     public static class node{

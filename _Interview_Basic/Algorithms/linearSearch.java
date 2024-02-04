@@ -13,3 +13,4 @@ public class linearSearch {
         System.out.println(key+" is found at index: "+linearSearch(a1, key));    
     }
 }
+
