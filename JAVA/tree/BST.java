@@ -25,8 +25,6 @@ public class BST {
         return root;
     }
 
-
-
     public static boolean searchInBST(node root, int key){
 
         if(root==null){
