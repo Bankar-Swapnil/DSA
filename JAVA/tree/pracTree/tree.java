@@ -1,9 +1,6 @@
 import java.util.*;
 
-import org.w3c.dom.Node;
-
 public class tree {
-    
 
     public static class node{
         int data;
