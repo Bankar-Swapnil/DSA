@@ -88,6 +88,7 @@ public class prefixEvaluation {
     }
 
 
+
     public static String infixToPrefix(String s){
 
         Stack<Character> st = new Stack<>();
@@ -168,11 +169,10 @@ public class prefixEvaluation {
         return ab.toString();
     } 
 
-
     public static void main(String args[]){
         // System.out.println(prefixEval("-+7*45+20"));
-        // System.out.println(postFix("46+2/5*7+"));
+        System.out.println(postFix("46+2/5*7+"));
         // System.out.println(infixToPrefix("(a-b/c)*(a/k-l)"));
-        System.out.println(infixToPostfix("(a-b/c)*(a/k-l)"));
+        // System.out.println(infixToPostfix("(a-b/c)*(a/k-l)"));
     }
 }
