@@ -53,6 +53,16 @@ public class intersection {
         return null; // No intersection found
     }
 
+    public static void displayLinkedlist(node head){
+
+        node temp = head;
+        while (temp!=null) {
+            System.out.print(temp.data+" -> ");
+            temp=temp.next;
+        }
+
+    }
+
     public static void main(String[] args) {
 
         node head1 = new node(5);
@@ -63,11 +73,19 @@ public class intersection {
         head1.next.next.next.next.next = new node(6);
         head1.next.next.next.next.next.next = new node(9);
 
+        displayLinkedlist(head1);
+
         node head2 = new node(4);
         head2.next = new node (3);
         head2.next.next = new node(7);
         head2.next.next.next = new node(6);
         head2.next.next.next.next = new node(9);
+
+        System.out.println();
+
+        displayLinkedlist(head2);
+
+        System.out.println();
 
 
         System.out.println(FindIntersection(head1,head2).data);
